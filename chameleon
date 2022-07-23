@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Copyright 2022 Aleks Rutins
+
+if (( $# != 1 )); then
+    echo "Usage: $0 <PROFILE>"
+fi
+
+profile=$1
+
+profile_path=${CHAMELEON_PROFILES_PATH:-"$HOME/.chameleon"}/$profile
+
+source $profile_path
+
+${SHELL:-"bash"}
